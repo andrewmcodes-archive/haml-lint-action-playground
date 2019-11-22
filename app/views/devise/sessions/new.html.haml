@@ -1,0 +1,14 @@
+%h1.text-4xl.text-center.font-thin Sign In
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal w-3/4 mx-auto" }) do |f|
+  .flex.flex-col.mt-4
+    = f.email_field :email, autofocus: true, class: 'flex-grow input', autocomplete: "email", placeholder: "Email"
+  .flex.flex-col.mt-4
+    = f.password_field :password, autocomplete: "current-password", class: 'flex-grow input', placeholder: "Password"
+  - if devise_mapping.rememberable?
+    .flex.items-center.mb-6.mt-4
+      = f.check_box :remember_me, class:"mr-2 leading-tight"
+      = f.label :remember_me, class:"block text-grey-darker"
+  .flex.flex-col.mt-8
+    = f.submit "Log in", class: "btn btn-primary"
+.text-center.mt-4
+  = render "devise/shared/links"

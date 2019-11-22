@@ -1,0 +1,8 @@
+linters:
+  SpaceInsideHashAttributes:
+    exclude:
+      - "app/views/admin/application/_navigation.html.haml"
+
+  MultilinePipe:
+    exclude:
+      - "app/views/admin/application/_navigation.html.haml"

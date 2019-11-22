@@ -1,0 +1,9 @@
+%h1.text-4xl.text-center.font-thin Forgot your password?
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "form-horizontal w-3/4 mx-auto", method: :post }) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .flex.flex-col.mt-4
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'flex-grow input', placeholder: 'Email'
+  .flex.flex-col.mt-8
+    = f.submit "Send me reset password instructions", class: "btn btn-primary"
+.text-center.mt-4
+  = render "devise/shared/links"
