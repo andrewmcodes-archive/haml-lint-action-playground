@@ -45,7 +45,7 @@ jobs:
       - name: 'Inputs: Additional Gems with Versions'
         uses: andrewmcodes/haml-lint-action@changemepls
         with:
-          additional_gems: 'rubocop-rails -v 2.3.2 rubocop-performance -v 1.5.1'
+          additional_gems: "'rubocop-rails:2.3.2' 'rubocop-performance:~>1.5'"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
