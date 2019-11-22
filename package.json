@@ -1,5 +1,5 @@
 {
-  "name": "rubocop_linter_action_playground",
+  "name": "haml_lint_action_playground",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",

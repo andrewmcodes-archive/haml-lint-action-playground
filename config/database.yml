@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: rubocop_linter_action_playground_development
+  database: haml_lint_action_playground_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: rubocop_linter_action_playground
+  #username: haml_lint_action_playground
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rubocop_linter_action_playground_test
+  database: haml_lint_action_playground_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: rubocop_linter_action_playground_production
-  username: rubocop_linter_action_playground
-  password: <%= ENV['RUBOCOP_LINTER_ACTION_PLAYGROUND_DATABASE_PASSWORD'] %>
+  database: haml_lint_action_playground_production
+  username: haml_lint_action_playground
+  password: <%= ENV['haml_lint_ACTION_PLAYGROUND_DATABASE_PASSWORD'] %>
