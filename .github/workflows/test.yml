@@ -1,0 +1,64 @@
+name: Test
+on:
+  push:
+    branches:
+      - '*'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: 'Inputs: None'
+        uses: andrewmcodes/haml-lint-action@0b811e67f46b838b47c10863c859894671331296
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Inputs: Version'
+        uses: andrewmcodes/haml-lint-action@0b811e67f46b838b47c10863c859894671331296
+        with:
+          version: '0.33.0'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Inputs: File Paths'
+        uses: andrewmcodes/haml-lint-action@0b811e67f46b838b47c10863c859894671331296
+        with:
+          file_paths: 'app/views/**/*.html.haml'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Inputs: Fail Level'
+        uses: andrewmcodes/haml-lint-action@0b811e67f46b838b47c10863c859894671331296
+        with:
+          fail_level: 'warning'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Inputs: Additional Gems'
+        uses: andrewmcodes/haml-lint-action@0b811e67f46b838b47c10863c859894671331296
+        with:
+          additional_gems: 'rubocop-rails rubocop-performance'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Inputs: Additional Gems with Versions'
+        uses: andrewmcodes/haml-lint-action@0b811e67f46b838b47c10863c859894671331296
+        with:
+          additional_gems: 'rubocop-rails -v 2.3.2 rubocop-performance -v 1.5.1'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Inputs: Exclude Paths'
+        uses: andrewmcodes/haml-lint-action@0b811e67f46b838b47c10863c859894671331296
+        with:
+          exclude_paths: 'app/views/devise/confirmations/*.html.haml'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Inputs: Config Path'
+        uses: andrewmcodes/haml-lint-action@0b811e67f46b838b47c10863c859894671331296
+        with:
+          config_path: 'config/haml-lint.yml'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
