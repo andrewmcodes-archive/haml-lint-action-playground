@@ -59,6 +59,6 @@ jobs:
       - name: 'Inputs: Config Path'
         uses: andrewmcodes/haml-lint-action@changemepls
         with:
-          config_path: 'config/haml-lint.yml'
+          config_path: 'config/.haml-lint.yml'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
